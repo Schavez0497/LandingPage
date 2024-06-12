@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page con Bootstrap</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+    body {
+        background-color: #f8f9fa;
+        color: #333;
+        position: relative; 
+    }
+    .navbar {
+        background-color: #041E42;
+        border-color: #041E42;
+    }
+    .navbar-brand, .navbar-nav > li > a {
+        color: #FFD700 !important;
+    }
+    .jumbotron {
+        background-color: #041E42;
+        color: #FFD700;
+    }
+    .thumbnail {
+        background-color: #fff;
+        border-color: #041E42;
+    }
+    .thumbnail h3 {
+            color: #041E42;
+        }
+    .img-thumbnail {
+        margin: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        max-width: 100%;
+    }
+    .devicon-jenkins-line {
+        font-size: xx-large;
+    }
+    .btn-default {
+        background-color: #041E42;
+        border-color: #041E42;
+        color: #FFD700;
+    }
+        .btn-default:hover,
+        .btn-default:focus {
+            background-color: #FFD700;
+            border-color: #FFD700;
+            color: #041E42;
+    }
+    footer {
+        background-color: #041E42;
+        color: #FFD700;
+        padding: 10px 0;
+    }
+    .btn-margin-bottom {
+        margin-bottom: 20px;
+    }
+    .jumbotron .avatar {
+        width: 170px;
+        height: 170px; 
+        position: center; 
+        top: 20px; 
+        right: 20px; 
+        border-radius: 50%; 
+    }
+    .jumbotron .star {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .card {
+        margin: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .typewriter {
+        font-family: sans-serif;
+        color: #fff;
+        padding-left: 30px;
+        display: block;
+    }
+    .typewriter-text {
+        padding-right: 10px;
+        color: #ffe509;
+        border-right: solid #ffe509 7px;
+        text-transform: uppercase;
+        animation: cursor 1s ease-in-out infinite;
+        
+    }
+    .effect {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .fireworks {
+        background-image: url('image/sparkles-fireworks.gif');
+        background-size: contain;
+        animation: fireworks 5s infinite;
+    }
+
+    @keyframes fireworks {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+    .rain {
+        position: absolute;
+        width: 50px; /* Ancho de la gota */
+        height: 50px; /* Altura de la gota */
+        background-image: url('image/pngwing.com.png');
+        background-size: contain;
+        animation: raindrop-fall 5s linear infinite;
+        z-index: 9999;
+        transition: opacity 1s ease;
+    }
+
+    @keyframes raindrop-fall {
+    0% {
+        transform: translateY(-100px); /* Empieza fuera de la pantalla */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh); /* Termina en la parte inferior de la ventana */
+        opacity: 1;
+    }
+}
+    @keyframes cursor {
+        from { border-color: #ffe509; }
+        to { border-color: transparent; }
+    }
+
+    @media (max-width: 767.98px) {
+        .typewriter { font-size: 35px; }
+    }
+    @media (min-width: 768px) {
+        .typewriter { font-size: 60px; }
+    }
+</style>
+<body>
+    <div id="fireworks" class="effect"></div>
+    <!-- <div class="rain"></div> -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="rain-container">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <i class="devicon-jenkins-line navbar-brand"></i>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#acerca">Acerca de</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron text-center">
+        <div class="container">
+            <img src="image/avatar.png" alt="Avatar" class="avatar">
+            <h1 >Sergio Chavez Moraga</h1>
+            <div class="star">★</div>
+            <p>Desarrollador Junior.</p>
+        </div>
+    </div>
+    <div id="skills" class="container text-center">
+        <h2>Mis Habilidades</h2>
+        <p>A continuación se presentan algunas de las tecnologías con las que trabajo:</p>
+        <div class="container center">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div style="width: 30rem;">
+                        <div class="thumbnail">
+                            <img class="img-thumbnail img-responsive" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg" />
+                            <div class="media-body p-05">
+                                <h3 class="media-heading">DOCKER</h3>
+                                <p>Docker es una plataforma de código abierto que permite desarrollar, enviar y ejecutar aplicaciones dentro de contenedores. Facilita la creación de entornos aislados y portátiles, asegurando consistencia desde el desarrollo hasta la producción.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div style="width: 30rem;">
+                        <div class="thumbnail">
+                            <img class="img-thumbnail img-responsive" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" alt="CSS3">
+                            <div class="media-body p-05">
+                                <h3 class="media-heading">KUBERNETES</h3>
+                                <p>Kubernetes es una plataforma de código abierto diseñada para automatizar la implementación, escalado y operación de aplicaciones en contenedores, gestionando clústeres de hosts a través de un sistema extensible y portátil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div style="width: 30rem;">
+                        <div class="thumbnail">
+                            <img class="img-thumbnail img-responsive" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/helm/helm-original.svg" alt="JavaScript">
+                            <div class="media-body p-05">
+                                <h3 class="media-heading">HELM</h3>
+                                <p>Helm es un gestor de paquetes para Kubernetes que facilita la definición, instalación y actualización de aplicaciones en clústeres. Utiliza "charts" para empaquetar recursos Kubernetes, simplificando despliegues y gestión.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div style="width: 30rem;">
+                        <div class="thumbnail">       
+                            <img class="img-thumbnail img-responsive" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
+                            <div class="media-body p-05">
+                                <h3 class="media-heading">Bootstrap</h3>
+                                <p>Bootstrap es un marco de trabajo de código abierto para desarrollar sitios web y aplicaciones web responsivas y móviles. Proporciona plantillas de diseño basadas en HTML, CSS y JavaScript para facilitar el desarrollo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div style="width: 30rem;">
+                        <div class="thumbnail">      
+                            <img class="img-thumbnail img-responsive" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+                            <div class="media-body p-05">
+                                <h3 class="media-heading">JAVA</h3>
+                                <p>Java es un lenguaje de programación de alto nivel, orientado a objetos y con enfoque en portabilidad. Permite desarrollar aplicaciones multiplataforma gracias a su máquina virtual (JVM) que ejecuta el código en cualquier sistema operativo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div style="width: 30rem;">
+                        <div class="thumbnail">
+                            <img class="img-thumbnail img-responsive" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                            <div class="media-body p-05">
+                                <h3 class="media-heading">HTML</h3>
+                                <p>HTML (HyperText Markup Language) es el lenguaje estándar para crear y estructurar páginas web. Utiliza etiquetas para definir elementos como texto, imágenes, enlaces y formularios, formando la base de cualquier sitio web.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="jumbotron text-center">
+        <div id="acerca" class="container">
+            <h2>Acerca de</h2>
+            <p class='typewriter-text' data-text='[ "Me gusta jugar Video juegos. ", "¡HALA MADRID! Ganamos la 15 SIUUUUU!!!." ]'></p>
+            <img style="width: 5rem;" src="/image/real madrid.gif"/>
+        </div>
+    </div>
+    <div id="contacto" class="container text-center">
+        <h2>Contacto</h2>
+        <p></p>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Tu correo electrónico">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" id="message" rows="5" placeholder="Tu mensaje"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default btn-margin-bottom pull-left">Enviar</button>
+        </form>
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>© 2024 Real Madrid. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+             $('.thumbnail').on('mouseenter', function() {
+                $(this).css('box-shadow', '0 4px 8px rgba(0,0,0,0.2)');
+            }).on('mouseleave', function() {
+                $(this).css('box-shadow', '0 1px 1px rgba(0,0,0,0.05)');
+            });
+        });
+
+        $(document).ready(function() {
+  
+  typing( 0, $('.typewriter-text').data('text') );
+
+  function typing( index, text ) {
+    
+    var textIndex = 1;
+
+    var tmp = setInterval(function() {
+      if ( textIndex < text[ index ].length + 1 ) {
+				$('.typewriter-text').text( text[ index ].substr( 0, textIndex ) );
+				textIndex++;
+			} else {
+        setTimeout(function() { deleting( index, text ) }, 2000);
+        clearInterval(tmp);
+      }
+
+		}, 150);
+
+	}
+
+	function deleting( index, text ) {
+
+    var textIndex = text[ index ].length;
+
+    var tmp = setInterval(function() {
+
+      if ( textIndex + 1 > 0 ) {
+        $('.typewriter-text').text( text[ index ].substr( 0, textIndex ) );
+        textIndex--;
+      } else {
+        index++;
+        if ( index == text.length ) { index = 0; }
+        typing( index, text );
+        clearInterval(tmp);
+      }
+
+		}, 150)
+
+  }
+
+});
+
+$(document).ready(function(){
+    $('#fireworks').addClass('fireworks');
+    setTimeout(function() {
+        $('.effect').removeClass('fireworks');
+    }, 5000);
+});
+
+$(document).ready(function(){
+    // Generar gotas de lluvia de manera aleatoria
+    var numRaindrops = 100;
+    for (var i = 0; i < numRaindrops; i++) {
+        var raindrop = $('<div class="rain"></div>');
+        raindrop.css({
+            'left': Math.random() * 100 + '%',
+            'animation-delay': Math.random() * 5 + 's'
+        });
+        $('#rain-container').append(raindrop);
+    }
+    setTimeout(function() {
+        $('.rain').addClass('removing');
+        setTimeout(function() {
+            $('.rain').remove();
+        }, 1000); // Ajusta el tiempo para que coincida con la transición
+    }, 10000);
+});
+    </script>
+</body>
+</html>
